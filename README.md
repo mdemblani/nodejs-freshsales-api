@@ -1,6 +1,6 @@
 # node-freshsales
 
-FreshSales api wrapper for the freshsales api. Has Promiose handling. See [https://www.freshsales.io/api/](https://www.freshsales.io/api/)
+FreshSales api wrapper for the freshsales api. Has Promise handling. See [https://www.freshsales.io/api/](https://www.freshsales.io/api/)
 
 ```javascript
 var FreshSales = require('freshsales-api')
@@ -41,7 +41,7 @@ freshsales.request(method, options).then(function (result) {
 ```
 
 ## Installation
-NPM package is not currently present. The only way possible wrtie now is using the git method
+NPM package is not currently present. The only way possible write now is using the git method
 `npm install GIT_REMOTE_URL`
 
 ## Usage
@@ -103,9 +103,9 @@ freshsales.request(method, options).then(function (result) {
 
 ## Future Updates
 Support for the following will be added over time:
-1. Callback Support for the available methods
-2. Support for PathParams as a seperate key in the available method
-3. Helper methods - Convenience methods such as FreshSales.get, FreshSales.put, FreshSales.push, FreshSales.delete
+  1. Callback Support for the available methods
+  2. Support for PathParams as a seperate key in the available method
+  3. Helper methods - Convenience methods such as FreshSales.get, FreshSales.put, FreshSales.push, FreshSales.delete
 
 ---------------------------------------------------------------------------------
 
