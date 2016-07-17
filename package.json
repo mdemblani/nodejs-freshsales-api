@@ -1,0 +1,27 @@
+{
+  "name": "freshsales-api",
+  "version": "1.0.0",
+  "description": "FreshSales Api for NodeJS",
+  "main": "freshSales.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "freshsales",
+    "api",
+    "wrapper",
+    "nodeJS"
+  ],
+  "author": "Manish M. Demblani",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdemblani/nodejs-freshsales-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mdemblani/nodejs-freshsales-api/issues"
+  },
+  "homepage": "https://github.com/mdemblani/nodejs-freshsales-api#readme"
+}
