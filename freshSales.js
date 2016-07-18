@@ -49,7 +49,7 @@ FreshSales.prototype.request = function(method, options) {
 
 			//Check the HTTP response status Code and see it is a success
 			if(response.statusCode < 200 || response.statusCode > 299) {
-				return reject(response.body);
+				return reject(new Error(JSON.stringify(response.body)));
 			}
 
 			return resolve(response);
