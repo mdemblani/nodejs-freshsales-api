@@ -1,4 +1,4 @@
-# node-freshsales
+# nodejs-freshsales
 
 [![Known Vulnerabilities](https://snyk.io/test/github/mdemblani/nodejs-freshsales-api/badge.svg)](https://snyk.io/test/github/mdemblani/nodejs-freshsales-api) 
 
