@@ -8,24 +8,24 @@ FreshSales api wrapper for the freshsales api. Has Promise handling. See [https:
 var FreshSales = require('freshsales-api')
 
 //Using API-KEY
-var authtentication = {
+var authentication = {
     api_key: "FRESH SALES API KEY"
 };
 
 //Using email and password
-var authtentication = {
+var authentication = {
     email: "FRESH SALES Email",
     password: "FRESH SALES PASSWORD"
 };
 
 /**
- * Initate FreshSales Constructor, to setup the API
+ * Initiate FreshSales Constructor, to setup the API
  * authentication - THe authentication object
  * domain - Your FreshSales URL : Syntax = https://subdomain.freshsales.io
  *
  * Throws the following possible errors:
  * 1. If domain is missing: "Domain name required for FreshSales API. Syntax: https://domain.freshsales.io"
- * 2. If authentication object doesnot contain API key or UserCredentials - "API Key or UserCredentials not provided"
+ * 2. If authentication object does not contain API key or UserCredentials - "API Key or UserCredentials not provided"
  */
 var freshsales = new FreshSales(domain, authentication);
 
@@ -60,13 +60,13 @@ var FreshSales = require('freshsales-api')
 ### API Setup
 ```javascript
 /**
- * Initate FreshSales Constructor, to setup the API
+ * Initiate FreshSales Constructor, to setup the API
  * authentication - THe authentication object
  * domain - Your FreshSales URL : Syntax = https://subdomain.freshsales.io
  *
  * Throws the following possible errors:
  * 1. If domain is missing: "Domain name required for FreshSales API. Syntax: https://domain.freshsales.io"
- * 2. If authentication object doesnot contain API key or UserCredentials - "API Key or UserCredentials not provided"
+ * 2. If authentication object does not contain API key or UserCredentials - "API Key or UserCredentials not provided"
  */
 var freshsales = new FreshSales(domain, authentication);
 ```
@@ -74,13 +74,13 @@ var freshsales = new FreshSales(domain, authentication);
 Authentication Object can be any one of the following
 Using API-KEY
 ```javascript
-var authtentication = {
+var authentication = {
     api_key: "FRESH SALES API KEY"
 };
 ```
 Using email and password
 ```javascript
-var authtentication = {
+var authentication = {
     email: "FRESH SALES Email",
     password: "FRESH SALES PASSWORD"
 };
@@ -91,7 +91,7 @@ var authtentication = {
 var options = {
     endpoint: 'API Endpoint',
     payload: 'Th object containing payload to be sent if a POST or PUT request is made',
-    query: 'The oject containig key-value pair of parameters to be attached to the request url'
+    query: 'The object containing key-value pair of parameters to be attached to the request url'
 };
 var method = "POST|GET|PUT|DELETE";
 
@@ -106,7 +106,7 @@ freshsales.request(method, options).then(function (result) {
 ## Future Updates
 Support for the following will be added over time:
   1. Callback Support for the available methods
-  2. Support for PathParams as a seperate key in the available method
+  2. Support for PathParams as a separate key in the available method
   3. Helper methods - Convenience methods such as FreshSales.get, FreshSales.put, FreshSales.push, FreshSales.delete
 
 ---------------------------------------------------------------------------------
