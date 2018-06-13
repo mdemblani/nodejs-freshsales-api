@@ -5,7 +5,6 @@ var _ = require("lodash");
 var request = require("request");
 
 function FreshSales(domain, authentication) {
-
 	if(!domain || !_.isString(domain)) {
 		throw new Error("Domain name required for FreshSales API. Syntax: https://domain.freshsales.io");
 	}
@@ -57,6 +56,51 @@ FreshSales.prototype.request = function(method, options) {
 	});
 
 	return promise;
+};
+
+/**
+* Convenience method for search
+* @param query: name-value pairs to search
+* @return array of results
+*/
+FreshSales.prototype.search = function(query) {
+	var freshsales = this;
+    var options = {
+        endpoint: 'api/search',
+        query: query
+    };	
+	return this.request('GET', options);
+};
+
+
+/**
+* Search for Leads by email address
+* @param email address
+* @return array of results
+*/
+FreshSales.prototype.searchLeadsByEmail = function(emailAddress) {
+	var freshsales = this;
+    var query = {
+            f : 'email',
+            include: 'lead',
+            q: emailAddress
+    };	
+	return this.search(query);
+};
+
+/**
+* Search for Contacts by email address
+* @param email address
+* @return array of results
+*/
+FreshSales.prototype.searchContactsByEmail = function(emailAddress) {
+	var freshsales = this;
+    var query = {
+            f : 'email',
+            include: 'contact',
+            q: emailAddress
+    };	
+	return this.search(query);
 };
 
 
