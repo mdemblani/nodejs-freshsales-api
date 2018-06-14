@@ -103,5 +103,25 @@ FreshSales.prototype.searchContactsByEmail = function(emailAddress) {
 	return this.search(query);
 };
 
+/**
+* Create a Note
+* @param the note
+* @param ID of entity to add the Note to
+* @param entity:"Lead" or "Contact" or "SalesAccount" or "Deal"
+* @return Note
+*/
+FreshSales.prototype.createANote = function(description, targetable_id, targetable_type){
+    var freshsales = this;
+    var params = {
+        description: description, 
+        targetable_id: targetable_id,
+        targetable_type: targetable_type
+    };
+    var options = {
+        endpoint: 'api/notes',
+        payload: params
+    };
+    return this.request('POST', options);
+};
 
 module.exports = exports = FreshSales;
