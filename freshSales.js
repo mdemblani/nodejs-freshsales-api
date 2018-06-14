@@ -8,7 +8,7 @@ function FreshSales(domain, authentication) {
 	if(!domain || !_.isString(domain)) {
 		throw new Error("Domain name required for FreshSales API. Syntax: https://domain.freshsales.io");
 	}
-
+	
 	this.authorization;
 	this.base_url = 'https://'+ domain +'.freshsales.io';
 
@@ -54,7 +54,6 @@ FreshSales.prototype.request = function(method, options) {
 			return resolve(response);
 		});
 	});
-
 	return promise;
 };
 
@@ -65,10 +64,10 @@ FreshSales.prototype.request = function(method, options) {
 */
 FreshSales.prototype.search = function(query) {
 	var freshsales = this;
-    var options = {
-        endpoint: 'api/search',
-        query: query
-    };	
+	var options = {
+		endpoint: 'api/search',
+		query: query
+	};
 	return this.request('GET', options);
 };
 
@@ -80,11 +79,11 @@ FreshSales.prototype.search = function(query) {
 */
 FreshSales.prototype.searchLeadsByEmail = function(emailAddress) {
 	var freshsales = this;
-    var query = {
-            f : 'email',
-            include: 'lead',
-            q: emailAddress
-    };	
+	var query = {
+		f : 'email',
+		include: 'lead',
+		q: emailAddress
+	};
 	return this.search(query);
 };
 
@@ -95,13 +94,33 @@ FreshSales.prototype.searchLeadsByEmail = function(emailAddress) {
 */
 FreshSales.prototype.searchContactsByEmail = function(emailAddress) {
 	var freshsales = this;
-    var query = {
-            f : 'email',
-            include: 'contact',
-            q: emailAddress
-    };	
+	var query = {
+		f : 'email',
+		include: 'contact',
+		q: emailAddress
+	};
 	return this.search(query);
 };
 
+/**
+* Create a Note
+* @param the note
+* @param ID of entity to add the Note to
+* @param entity:"Lead" or "Contact" or "SalesAccount" or "Deal"
+* @return Note
+*/
+FreshSales.prototype.createANote = function(description, targetable_id, targetable_type){
+	var freshsales = this;
+	var params = {
+		description: description, 
+		targetable_id: targetable_id,
+		targetable_type: targetable_type
+	};
+	var options = {
+		endpoint: 'api/notes',
+		payload: params
+	};
+	return this.request('POST', options);
+};
 
 module.exports = exports = FreshSales;
