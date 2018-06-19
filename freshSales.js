@@ -8,7 +8,7 @@ function FreshSales(domain, authentication) {
 	if(!domain || !_.isString(domain)) {
 		throw new Error("Domain name required for FreshSales API. Syntax: https://domain.freshsales.io");
 	}
-
+	
 	this.authorization;
 	this.base_url = 'https://'+ domain +'.freshsales.io';
 
@@ -54,7 +54,6 @@ FreshSales.prototype.request = function(method, options) {
 			return resolve(response);
 		});
 	});
-
 	return promise;
 };
 
