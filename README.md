@@ -43,8 +43,14 @@ freshsales.request(method, options).then(function (result) {
 ```
 
 ## Installation
-NPM package is not currently present. The only way possible write now is using the git method
-`npm install GIT_REMOTE_URL`
+NPM package is available for the repository. You can either install it from the NPM package directory or via the git url as:
+```
+npm install freshsales-api
+
+        [OR]
+
+npm install GIT_REMOTE_URL
+```
 
 ## Usage
 For information on the possible endpoints, refer to the FreshSales Api documentation: [https://www.freshsales.io/api](https://www.freshsales.io/api)
